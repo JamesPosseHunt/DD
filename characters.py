@@ -23,6 +23,7 @@ class Character:
     def cqc(self):
         if self.background == cqc:
             self.race.strength += random.randint(0, 6)
+        
 
 spartan = Race("Spartan", 15, 10, 10, 5, 20)
 human = Race("Human", 10, 5, 5, 2)

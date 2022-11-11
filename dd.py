@@ -2,43 +2,35 @@ from random import randint
 import tkinter.messagebox
 from tkinter import *
 import sys
-
-
+from characters import *
+        
 def d4():
     result = randint(1, 4)
-    tkinter.messagebox.showinfo("You rolled a ", result)
+    tkinter.messagebox.showinfo("Result", "You rolled a " + str(result))
 
 def d6():
     result = randint(1, 6)
-    tkinter.messagebox.showinfo("You rolled a ", result)
+    tkinter.messagebox.showinfo("Result", "You rolled a " + str(result))
 
 def d8():
     result = randint(1, 8)
-    tkinter.messagebox.showinfo("You rolled a ", result)
+    tkinter.messagebox.showinfo("Result", "You rolled a " + str(result))
 
 def d10():
     result = randint(1, 10)
-    tkinter.messagebox.showinfo("You rolled a ", result)
+    tkinter.messagebox.showinfo("Result", "You rolled a " + str(result))
 
 def d12():
     result = randint(1, 12)
-    tkinter.messagebox.showinfo("You rolled a ", result)
+    tkinter.messagebox.showinfo("Result", "You rolled a " + str(result))
 
 def d20():
     result = randint(1, 20)
-    tkinter.messagebox.showinfo("You rolled a ", result)
+    tkinter.messagebox.showinfo("Result", "You rolled a " + str(result))
 
 def get_input(text_box):
     value = text_box.get("1.0", "end-1c")
     return value
-
-def char_sheet():
-    char_win = Tk()
-    char_win.title("Character Sheet")
-    char_text = Text(char_win, height=2, width=5)
-    char_text.pack()
-    enter_name = Button(char_win, text="Name", height=2, width=5)
-    enter_name.pack()
 
 def dice():
     dice_win = Tk()
@@ -77,7 +69,7 @@ dice_btn = Button(root, text="Roll Dice", width=20, height=10,
 dice_btn.pack()
 
 char_button = Button(root, text="Character Sheet", width=20, height=10,
-                     activebackground='blue', bg='grey', command=char_sheet)
+                     activebackground='blue', bg='grey')
 char_button.pack()
 
 root.mainloop()

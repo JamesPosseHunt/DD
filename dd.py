@@ -1,8 +1,8 @@
 from random import randint
 import tkinter.messagebox
-from tkinter import *
 import sys
-from characters import *
+from tkinter import *
+import he_character
         
 def d4():
     result = randint(1, 4)
@@ -54,6 +54,13 @@ def dice():
                  activebackground='blue', bg='grey', command=d20)
     b20.pack()
 
+def chartype_menu():
+    type_win = Tk()
+    type_win.title("Select Type")
+    he = Button(type_win, text="Halo: Eternal Framework", width=100, height=50, activebackground='green', bg='grey', command=he_character.character_sheet)
+    he.pack()
+# A quick note here: I'm developing this for my own custom tabletop rpg framework based on Halo, but down the line it would be good to have it work with standard DnD and other tabletop rpg game systems
+
 
 root = Tk()
 root.title("DD")
@@ -69,7 +76,7 @@ dice_btn = Button(root, text="Roll Dice", width=20, height=10,
 dice_btn.pack()
 
 char_button = Button(root, text="Character Sheet", width=20, height=10,
-                     activebackground='blue', bg='grey')
+                     activebackground='blue', bg='grey', command=chartype_menu)
 char_button.pack()
 
 root.mainloop()
